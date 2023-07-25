@@ -12,9 +12,9 @@ class DeviceController extends Controller
         return $id?Device::find($id): Device::all();
     }
 
-    function getListByName($name = null){
-        return $name?Device::where('name',$name)->get() : device::all();
-    }
+    // function getListByName($name = null){
+    //     return $name?Device::where("name",$name)->get() : device::all();
+    // }
 
     function add(Request $request){
 
@@ -49,5 +49,9 @@ class DeviceController extends Controller
             return ['Result'=>'Update Operation has been failed!'];
         }
 
+    }
+
+    function search($name){
+        return Device::where("name","like", "%".$name."%")->get();
     }
 }

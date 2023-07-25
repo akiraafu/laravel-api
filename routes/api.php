@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('data',[myAPI::class, 'getData']);
 // Route::get('list',[DeviceController::class, 'list']);
 Route::get('list/{id?}',[DeviceController::class, 'list']);
-Route::get('list/{name?}',[DeviceController::class, 'getListByName']);
+// Route::get('list/{name?}',[DeviceController::class, 'getListByName']);
 Route::post('add',[DeviceController::class, 'add']);
 Route::put('update',[DeviceController::class, 'update']);
+Route::get('search/{name}',[DeviceController::class, 'search']);

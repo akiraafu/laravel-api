@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\myAPI;
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,5 @@ Route::put('update',[DeviceController::class, 'update']);
 Route::get('search/{name}',[DeviceController::class, 'search']);
 Route::delete('delete/{id}',[DeviceController::class, 'delete']);
 Route::post('test',[DeviceController::class,'testData']);
+
+Route::apiResource('member',MemberController::class);
